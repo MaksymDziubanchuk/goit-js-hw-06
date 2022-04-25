@@ -12,3 +12,23 @@ const images = [
     alt: 'Group of Horses Running',
   },
 ];
+
+const listEl = document.querySelector('.gallery');
+const imagesUrl = images.flatMap(image => image.url);
+const imagesAlt = images.flatMap(image => image.alt);
+
+const itemsString = `<li><img src="${imagesUrl[0]}" alt="${imagesAlt[0]}" width="360"></li>
+<li><img src="${imagesUrl[1]}" alt="${imagesAlt[1]}" width="360"></li>
+<li><img src="${imagesUrl[2]}" alt="${imagesAlt[2]}" width="360"></li>`;
+listEl.insertAdjacentHTML('afterbegin', itemsString);
+
+const listItems = listEl.querySelectorAll('li');
+
+for (const item of listItems) {
+  item.classList.add('gallery__item');
+  item.style.display = 'inline-flex';
+};
+
+
+
+
