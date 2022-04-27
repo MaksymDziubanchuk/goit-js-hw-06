@@ -4,9 +4,15 @@ const refs = {
 
 };
 
+const defaultValue = 'Anonimus';
+
 refs.nameInput.addEventListener('input', onNameInputInput);
 
 function onNameInputInput(event) {
-    refs.name.textContent = event.currentTarget.value;
+    if (event.currentTarget.value === '' || event.currentTarget.value === ' ') {
+        refs.name.textContent = defaultValue;
+    } else {
+        refs.name.textContent = event.currentTarget.value;
+    }
 };
 

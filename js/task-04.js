@@ -4,6 +4,8 @@ const refs = {
     counterValue: document.querySelector('span#value'),
 };
 
+const value = 0;
+refs.counterValue.textContent = value;
 
 function onDecDtnClick(event) {
     refs.counterValue.textContent = (Number(refs.counterValue.textContent) - 1);

@@ -14,12 +14,11 @@ const images = [
 ];
 
 const listEl = document.querySelector('.gallery');
-const imagesUrl = images.flatMap(image => image.url);
-const imagesAlt = images.flatMap(image => image.alt);
 
-const itemsString = `<li><img src="${imagesUrl[0]}" alt="${imagesAlt[0]}" width="360"></li>
-<li><img src="${imagesUrl[1]}" alt="${imagesAlt[1]}" width="360"></li>
-<li><img src="${imagesUrl[2]}" alt="${imagesAlt[2]}" width="360"></li>`;
+const itemsString = images.map(({url, alt}) => 
+  `<li><img src="${url}" alt="${alt}" width="360"></li>`
+).join('');
+
 listEl.insertAdjacentHTML('afterbegin', itemsString);
 
 const listItems = listEl.querySelectorAll('li');
