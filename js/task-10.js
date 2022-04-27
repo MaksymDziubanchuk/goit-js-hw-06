@@ -35,6 +35,7 @@ const onCreateBtnClick = event => {
 const onDestroyBtnClick = event => {
   refs.boxes.innerHTML = '';
   baseSize = 30;
+  refs.inputEl.value = 0;
 };
 
 refs.createBtn.addEventListener('click', onCreateBtnClick);
