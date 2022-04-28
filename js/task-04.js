@@ -4,15 +4,17 @@ const refs = {
     counterValue: document.querySelector('span#value'),
 };
 
-const value = 0;
-refs.counterValue.textContent = value;
+let value = 0;
+
 
 function onDecDtnClick(event) {
-    refs.counterValue.textContent = (Number(refs.counterValue.textContent) - 1);
+    value += 1;
+    refs.counterValue.textContent = value;
 };
 
 function onIncDtnClick(event) {
-    refs.counterValue.textContent = (Number(refs.counterValue.textContent) + 1);
+    value -= 1;
+    refs.counterValue.textContent = value;
 };
 
 refs.decBtn.addEventListener('click', onDecDtnClick);
